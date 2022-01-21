@@ -1,0 +1,25 @@
+<div>
+    <h1>Survivor Perks</h1>
+
+  <div class="container">
+    <div class="mt-5">
+      <span *ngFor="let perk of perks">
+        <div
+          *ngIf="convertPlayerRole(perk.role) != 'Killer'"
+          class="d-flex"
+        >
+          <div class="p-2 col-4">
+            <h2>{{ perk.displayName }}</h2>
+            <img [src]="getImg()" style="width: 400px" />
+          </div>
+          <div class="p-2 bd-highlight">
+            <label class="justify-text-center">{{
+              perk.perkDefaultDescription
+            }}</label>
+            <label>{{ convertPlayerRole(perk.role) }} Perk </label>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
